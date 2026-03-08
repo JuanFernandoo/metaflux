@@ -1,8 +1,9 @@
-import { createRootRouteWithContext, createRouter } from "@tanstack/react-router"
+import { createRootRouteWithContext, createRouter, notFound } from "@tanstack/react-router"
 import { queryClient } from "@/shared/query"
 import type { QueryClient } from "@tanstack/react-query"
 import { GameDetailRoute, GamesHomeRoute, NotFoundRoute } from "./routes"
 import { MainLayout } from "../layouts"
+import { NotFound } from "@/shared"
 
 export type RouterContext = {
   queryClient: QueryClient
@@ -10,6 +11,8 @@ export type RouterContext = {
 
 export const rootRoute = createRootRouteWithContext<RouterContext>()({
   component: MainLayout,
+  notFoundComponent: NotFound,
+  errorComponent: notFound
 })
 const routeTree = rootRoute.addChildren([
   GamesHomeRoute,

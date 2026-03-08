@@ -1,4 +1,5 @@
 export const API_GAMES = {
-    baseURL: "https://free-to-play-games-database.p.rapidapi.com/api",
-    API_KEY: "a21affeac4msh9d1e9bbf73f676dp1e226fjsn2efe2b8fcdc7",
-    HOST: "free-to-play-games-database.p.rapidapi.com"}
+  baseURL: import.meta.env.VITE_API_GAMES_URL,
+  API_KEY: import.meta.env.VITE_API_GAMES_KEY,
+  HOST: import.meta.env.VITE_API_GAMES_HOST
+}
